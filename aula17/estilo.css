@@ -1,0 +1,169 @@
+:root{
+
+ --body-bg-color: #eeddbd; /*cor de fundo do body*/
+ --purple: #d38f11; /*cor principal roxa (amarelada aqui)*/
+ --purple-two: #d6c586; /*variação da cor roxa (verde/amarelo)*/
+
+}
+
+
+
+*{
+
+    margin: 0; /*remover margens padrão*/
+    padding: 0; /*remover preenchimento padrão*/
+    color: var(--purple); /*usar cor principal no texto*/
+    font-family: 'popins' sans-serif; /*definir fonte padrão*/
+    font-weight: 300; /*peso da fonte leve*/
+    user-select: none; /*impede seleção de texto*/
+    list-style: none; /*remove estilo de listas*/
+
+}
+
+
+
+body{
+
+    display: flex; /*usa flexbox no body*/
+    height: 100vh;  /*pra deixar a tela "normal"*/
+    padding: 1.5rem; /*espaço interno*/
+    box-sizing: border-box;  /*manter a borda*/
+    background-color: var(--body-bg-color); /*fundo do body com a cor definida*/
+    align-items: center; /*centralizar verticalmente*/
+    justify-content: center; /*centralizar horizontalmente*/
+}
+
+
+
+
+.container{
+    display: flex; /*usar flexbox*/
+    align-items: center; /*alinha ao centro verticalmente*/
+    flex-direction: column;  /*deixar um embaixo do outro*/
+    width: 400px; /*largura do container*/
+    padding: .4rem; /*espaço interno*/
+    box-sizing: border-box; /*inclui padding na largura total*/
+    /* border: 10px solid black; */ /*borda comentada para teste*/
+}
+
+
+
+.imagem-perfil-contorno{
+    display: flex; /*usa flexbox*/
+    align-items: center; /*centraliza verticalmente*/
+    justify-content: center; /*centraliza horizontalmente*/
+    border-radius: 100%; /*deixa a borda redonda (círculo)*/
+    width: 156px; /*largura do contorno*/
+    height: 156px; /*altura do contorno*/
+    border: 2px solid var(--purple-two); /*borda com cor secundária*/
+}
+
+
+
+.imagem-perfil{
+    max-width: 150px; /*largura máxima da imagem*/
+    height: 150px; /*altura da imagem*/
+    border-radius: 100%; /*deixar redonda*/
+    background-color: var(--purple-two); /*fundo da imagem*/
+    overflow: hidden; /*esconde o que passa do limite*/
+}
+
+
+
+
+.imagem-perfil img{
+
+    width: 200px; /*largura real da imagem*/
+    height: 200px; /*altura real da imagem*/
+    object-fit: cover; /*preenche o espaço mantendo proporção*/
+    object-position: -1.7rem -8rem; /*ajusta o enquadramento da imagem*/
+
+}
+
+
+/*ahoba*/
+
+
+.ahoba{
+
+    font-size: 11pt; /*mudar tamanho da fonte*/
+    margin-top: .3rem ; /*margem superior pequena*/
+    margin-bottom: 5%; /*margem inferior proporcional*/
+}
+
+
+
+
+/*links*/
+
+.container ul:nth-child(3){
+
+    list-style: none; /*remove marcadores da lista*/
+    display: flex; /*usa flexbox*/
+    flex-direction: column; /*itens em coluna (um embaixo do outro)*/
+    width: 100%; /*ocupa toda a largura disponível*/
+    flex: 1; /*padroniza os tamanhos da ul*/
+    gap: 1rem; /*espaço entre os itens*/
+    margin-bottom: 20%; /*espaço abaixo da lista*/
+
+}
+
+.container ul:nth-child(3) li {
+
+    text-align: center; /*centraliza o texto*/    
+    border: 2px solid var(--purple); /*borda com a cor principal*/
+    border-radius: 10px; /*bordas arredondadas*/
+    cursor: pointer; /*muda o cursor ao passar por cima*/
+    padding: 0.8rem; /*espaçamento interno*/
+    font-weight: 600; /*peso da fonte mais forte*/
+    font-size: 15pt; /*tamanho da fonte*/
+
+}
+
+.container ul:nth-child(3) li:hover{
+
+    scale: 1.03; /*aumenta levemente o tamanho ao passar o mouse*/
+    background-color: var(--purple-two); /*muda o fundo no hover*/
+    transition: .3s; /*animação suave na transição*/
+
+}
+
+/*icones*/
+
+.container ul:nth-child(4){
+
+    list-style: none; /*remove os marcadores da lista*/
+    display: flex; /*usa flexbox*/
+    /* gap: 1rem; espaço entre os ícones  (não achei necessário) */
+    justify-content: center; /*centraliza os itens horizontalmente*/
+    flex-wrap: nowrap; /*não permite quebra de linha*/
+
+}
+
+
+
+.container ul:nth-child(4) li {
+    scale: 0.5; /*reduz o tamanho dos itens da lista para 50%*/
+    transition: 0.2s; /*animação suave de 0.2 segundos para mudanças visuais*/
+}
+
+.container ul:nth-child(4) li:hover {
+    scale: 0.6; /*aumenta o tamanho para 60% quando o item for hoverado*/
+    transition: 0.3s; /*animação mais lenta (0.3s) no hover*/
+    cursor: none; /*remove o cursor ao passar o mouse (pode ser alterado depois)*/
+}
+
+@media (max-width: 500px) { /*aplica estilos específicos para telas com largura máxima de 500px*/
+
+    .container {
+        width: 300px; /*define a largura da .container para 300px em telas pequenas*/
+    }
+
+    .container ul:nth-child(4) {
+        scale: 0.6; /*reduz o tamanho do ul (4º filho) para 60% em telas pequenas*/
+    }
+}
+
+
+
+
